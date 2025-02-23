@@ -1,0 +1,27 @@
+# Pedir la edad del usuario
+edad = int(input("Ingrese su edad: "))
+
+# Mostrar las opciones de boletos
+print("Seleccione el tipo de boleto:")
+print("(N) Normal")
+print("(E) Estudiante (descuento del 50%)")
+print("(S) Senior (descuento del 30% para mayores de 60 años)")
+
+# Pedir el tipo de boleto
+tipo_boleto = input("Ingrese el tipo de boleto (N, E, S): ").upper()
+
+# Definir el precio base
+precio_base = 100
+
+# Aplicar descuentos según las reglas
+if edad < 5:
+    precio_final = 0
+elif tipo_boleto == "E":
+    precio_final = precio_base * 0.5
+elif tipo_boleto == "S" and edad > 60:
+    precio_final = precio_base * 0.7
+else:
+    precio_final = precio_base
+
+# Mostrar el precio final del boleto
+print("El precio final del boleto es: $", precio_final)
